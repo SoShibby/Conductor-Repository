@@ -10,3 +10,5 @@ insecure
 twbs:bootstrap
 urigo:angular
 angularui:angular-ui-router
+cfs:standard-packages
+cfs:filesystem
