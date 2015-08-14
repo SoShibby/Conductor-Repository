@@ -13,3 +13,4 @@ angularui:angular-ui-router
 cfs:standard-packages
 cfs:filesystem
 underscore
+nimble:restivus
