@@ -25,5 +25,39 @@ angular.module('conductorRepository')
                         });
                 }).click();
             };
+
+            $scope.addComponentGroup = function() {
+                if($scope.fileUploads === null || $scope.fileUploads === undefined || $scope.fileUploads.length === 0) {
+                    alert("You must upload a jar file containing the component group.");
+                    return;
+                }
+
+                var componentGroup = jQuery.extend(true, {}, $scope.componentGroup);
+
+                try {
+                    componentGroup.options = JSON.parse(componentGroup.options);
+                } catch (e) {
+                    alert('Failed to parse component group options. Invalid JSON object.');
+                    return;
+                }
+
+                try {
+                    componentGroup.components = JSON.parse(componentGroup.components);
+                } catch (e) {
+                    alert('Failed to parse components. Invalid JSON object.');
+                    return;
+                }
+
+                componentGroup.fileId = $scope.fileUploads[0]._id._id;
+
+                $meteor.call('addComponentGroup', componentGroup).then(
+                    function(data) {
+                        alert('Successfully added component group!');
+                    },
+                    function(error) {
+                        console.log(error);
+                        alert('An error occured while adding component group. ' + error.reason);
+                    });
+            }
         }
     ]);
