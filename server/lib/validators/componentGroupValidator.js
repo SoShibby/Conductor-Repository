@@ -14,6 +14,10 @@ ComponentGroupValidator = (function() {
 
         if (!DataTypeUtil.isString(componentGroup.name) || componentGroup.name.length === 0) {
             throw new Meteor.Error(400, "Invalid component group name. The name cannot be empty.");
+
+        var validFilename = /^[0-9a-zA-Z.]+$/;
+        if (!validFilename.test(componentGroup.name)) {
+            throw new Meteor.Error(400, 'Invalid component group name. The component group name can only contain 0-9, a-z, A-Z and .');
         }
 
         if (!DataTypeUtil.isString(componentGroup.version) || componentGroup.version.length === 0) {
