@@ -22,6 +22,10 @@ ComponentGroupValidator = (function() {
 
         if (!DataTypeUtil.isString(componentGroup.version) || componentGroup.version.length === 0) {
             throw new Meteor.Error(400, "Invalid component group version. The version id cannot be empty.");
+
+        var validVersionNumber = /^[0-9.]+$/;
+        if (!validVersionNumber.test(componentGroup.version)) {
+            throw new Meteor.Error(400, 'Invalid component group version. The version id can only contain 0-9 and .');
         }
 
         console.log(Object.prototype.toString.call(componentGroup.options));
