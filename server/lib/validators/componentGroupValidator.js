@@ -4,6 +4,14 @@ ComponentGroupValidator = (function() {
             throw new Meteor.Error(400, "Invalid component group. The componet group must be an object.");
         }
 
+        if (!DataTypeUtil.isString(componentGroup.title) || componentGroup.title.length === 0) {
+            throw new Meteor.Error(400, 'Invalid component group title. The title cannot be empty.');
+        }
+
+        if (!DataTypeUtil.isString(componentGroup.description) || componentGroup.description.length === 0) {
+            throw new Meteor.Error(400, 'Invalid component group description. The description cannot be empty.');
+        }
+
         if (!DataTypeUtil.isString(componentGroup.name) || componentGroup.name.length === 0) {
             throw new Meteor.Error(400, "Invalid component group name. The name cannot be empty.");
         }
