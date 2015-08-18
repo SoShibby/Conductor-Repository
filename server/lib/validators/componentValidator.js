@@ -3,6 +3,9 @@ ComponentValidator = (function() {
         if (!DataTypeUtil.isString(component.name) || component.name.length === 0) {
             throw new Meteor.Error(400, 'Invalid component name. The name of the component cannot be empty.');
         }
+
+        if (!DataTypeUtil.isString(component.type) || component.type.length === 0) {
+            throw new Meteor.Error(400, 'Invalid component type. The type of the component cannot be empty.');
         }
 
         if (!DataTypeUtil.isArray(component.options)) {
