@@ -55,7 +55,6 @@ angular.module('conductorRepository')
                         alert('Successfully added component group!');
                     },
                     function(error) {
-                        console.log(error);
                         alert('An error occured while adding component group. ' + error.reason);
                     });
             }
