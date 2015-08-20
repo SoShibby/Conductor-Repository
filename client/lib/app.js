@@ -9,7 +9,15 @@ angular.module('conductorRepository').config(['$urlRouterProvider', '$stateProvi
             .state('search', {
                 url: '/search',
                 templateUrl: 'client/views/search/search.ng.html',
-                controller: 'search'
+                controller: 'search',
+                resolve: {
+                    'subscribe': [
+                        '$meteor',
+                        function($meteor) {
+                            return $meteor.subscribe('componentGroups');
+                        }
+                    ]
+                }
             })
             .state('addComponentGroup', {
                 url: '/add-component-group',

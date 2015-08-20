@@ -1,1 +1,18 @@
-<div>Search</div>
+<div id="search">
+    <h1>Search</h1>
+    <input type="text" class="search-box form-control" ng-model="query" placeholder="Search by org, name or version"/>
+    <button class="btn btn-primary">Search</button>
+    <ul class="results">
+        <li ng-repeat="componentGroup in componentGroups" class="result">
+            <h2 class="title">{{componentGroup.title}}</h2>
+            <p class="subtitle">
+                <label>{{componentGroup.org}}</label>
+                <label>»</label>
+                <label>{{componentGroup.name}}</label>
+                <label> »</label>
+                <label>{{componentGroup.version}}</label>
+            </p>
+            <div class="description">{{componentGroup.description}}</div>
+        </li>
+    </ul>
+</div>
