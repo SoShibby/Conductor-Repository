@@ -2,7 +2,6 @@ accounts-base@1.2.0
 accounts-password@1.1.1
 angular:angular@1.4.3
 angularui:angular-ui-router@0.2.15
-autopublish@1.0.3
 autoupdate@1.2.1
 base64@1.0.3
 binary-heap@1.0.3
