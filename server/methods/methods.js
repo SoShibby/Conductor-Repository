@@ -19,6 +19,7 @@ Meteor.methods({
         }
 
         componentGroup.org = this.userId;
+        componentGroup.package = componentGroup.org + ':' + componentGroup.name + ':' + componentGroup.version
 
         ComponentGroups.insert(componentGroup);
     }
