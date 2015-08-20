@@ -8,15 +8,15 @@ DataTypeUtil = (function() {
     }
 
     function isInt(value) {
-        return Number(n) === n && n % 1 === 0
+        return Number(value) === value && value % 1 === 0
     }
 
     function isDouble(value) {
-        return n === Number(n) && n % 1 !== 0;
+        return value === Number(value) && value % 1 !== 0;
     }
 
     function isFloat(value) {
-        return n === Number(n) && n % 1 !== 0;
+        return value === Number(value) && value % 1 !== 0;
     }
 
     function isArray(value) {
