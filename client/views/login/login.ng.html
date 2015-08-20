@@ -1,0 +1,17 @@
+<form ng-if="currentUser" class="login-form navbar-form navbar-right">
+    <div class="form-group">
+        <label>{{currentUser.org}}</label>
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="logout()">Logout</button>
+</form>
+
+<form ng-if="!currentUser" class="login-form navbar-form navbar-right">
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="username" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" ng-model="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="login(username, password)">Sign In</button>
+    <button type="submit" class="btn btn-success" ng-click="signup()">Sign Up</button>
+</form>
