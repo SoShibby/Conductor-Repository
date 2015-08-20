@@ -18,7 +18,6 @@ Meteor.methods({
             throw new Meteor.Error(400, 'A component group already exist with the same org, name and version.');
         }
 
-        componentGroup.org = this.userId;
         componentGroup.package = componentGroup.org + ':' + componentGroup.name + ':' + componentGroup.version
 
         ComponentGroups.insert(componentGroup);
