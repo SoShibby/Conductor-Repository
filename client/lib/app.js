@@ -1,4 +1,4 @@
-angular.module('conductorRepository', ['angular-meteor', 'ui.router']);
+angular.module('conductorRepository', ['angular-meteor', 'ui.router', 'angularModalService']);
 
 angular.module('conductorRepository').config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
     function($urlRouterProvider, $stateProvider, $locationProvider) {
