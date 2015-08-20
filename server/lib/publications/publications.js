@@ -9,3 +9,7 @@ Meteor.publish('myProfile', function() {
         });
     }
 });
+
+Meteor.publish('componentGroups', function() {
+    return ComponentGroups.find();
+});
