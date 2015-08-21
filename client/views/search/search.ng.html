@@ -4,6 +4,10 @@
     <button class="btn btn-primary">Search</button>
     <ul class="results">
         <li ng-repeat="componentGroup in componentGroups" class="result">
+            <button class="download-button btn btn-success btn-xs" ng-click="download(componentGroup)">
+                <i class="glyphicon glyphicon-download"></i>
+                Download
+            </button>
             <h2 class="title">{{componentGroup.title}}</h2>
             <p class="subtitle">
                 <label>{{componentGroup.org}}</label>

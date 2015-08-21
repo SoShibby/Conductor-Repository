@@ -29,5 +29,17 @@ angular.module('conductorRepository')
                     }
                 });
             });
+
+            $scope.download = function(componentGroup) {
+                var file = JarRepository.findOne(componentGroup.fileId);
+
+                if (!file) {
+                    alert('Couldn\'t find the file in the repository. Please report this to the site administrator.');
+                    return;
+                }
+
+                var url = '/cfs/files/jarRepository/' + file._id + '/' + file.original.name;
+                window.open(url, '_blank');
+            }
         }
     ]);

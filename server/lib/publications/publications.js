@@ -13,3 +13,7 @@ Meteor.publish('myProfile', function() {
 Meteor.publish('componentGroups', function() {
     return ComponentGroups.find();
 });
+
+Meteor.publish('jarRepository', function() {
+    return JarRepository.find();
+});

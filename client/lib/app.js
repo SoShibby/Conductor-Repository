@@ -14,7 +14,7 @@ angular.module('conductorRepository').config(['$urlRouterProvider', '$stateProvi
                     'subscribe': [
                         '$meteor',
                         function($meteor) {
-                            return $meteor.subscribe('componentGroups');
+                            return $meteor.subscribe('componentGroups') && $meteor.subscribe('jarRepository');
                         }
                     ]
                 }
