@@ -1,10 +1,11 @@
 #search h1 {
     font-size: 24px;
+    text-align: center;
 }
 
 #search .search-box {
     margin-bottom: 15px;
-    width: 350px;
+    width: 445px;
     display: inline;
 }
 
@@ -44,4 +45,17 @@
     font-size: 13px;
     margin-bottom: 10px;
     margin-top: 5px;
+}
+
+#search .result .download-button {
+    float: right;
+    margin-top: 10px;
+}
+
+#search .result .download-button i {
+    margin-right: 5px;
+}
+
+#search .result:not(:hover) .download-button {
+    display: none;
 }
