@@ -1,36 +1,40 @@
-<form>
-    <div class="form-group">
-        <label>Component Group Title</label>
-        <input type="text" class="form-control" ng-model="componentGroup.title">
-    </div>
+<div id="addComponentGroup">
+    <form>
+        <h1>Add a New Component Group</h1>
+        <hr>
         <div class="form-group">
-        <label>Component Group Description</label>
-        <textarea class="form-control" rows="10" ng-model="componentGroup.description"></textarea>
-    </div>
-    <div class="form-group">
-        <label>Component Group Name</label>
-        <input type="text" class="form-control" ng-model="componentGroup.name">
-    </div>
-    <div class="form-group">
-        <label>Version</label>
-        <input type="text" class="form-control" ng-model="componentGroup.version">
-    </div>
-    <div class="form-group">
-        <label>Options (JSON)</label>
-        <textarea type="text" class="form-control" rows="10" ng-model="componentGroup.options"></textarea>
-    </div>
-    <div class="form-group">
-        <label>Components Information (JSON)</label>
-        <textarea type="text" class="form-control" rows="20" ng-model="componentGroup.components"></textarea>
-    </div>
-    <div class="form-group">
-        <button ng-click="addJar()">Upload Jar</button>
-        <div ng-repeat="file in fileUploads">
-            <span ng-show="file._id.isUploaded()">Uploaded Successfully!</span>
-            <span ng-show="file._id.uploadProgress() && !file._id.isUploaded()">Uploading... {{file._id.uploadProgress()}}%</span>
+            <label>Component Group Title</label>
+            <input type="text" class="form-control" ng-model="componentGroup.title">
         </div>
-    </div>
-    <div class="form-group">
-        <button ng-click="addComponentGroup()">Add Component Group</button>
-    </div>
-</form>
+        <div class="form-group">
+            <label>Component Group Description</label>
+            <textarea class="form-control" rows="10" ng-model="componentGroup.description"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Component Group Name</label>
+            <input type="text" class="form-control" ng-model="componentGroup.name">
+        </div>
+        <div class="form-group">
+            <label>Version</label>
+            <input type="text" class="form-control" ng-model="componentGroup.version">
+        </div>
+        <div class="form-group">
+            <label>Options (JSON)</label>
+            <textarea type="text" class="form-control" rows="10" ng-model="componentGroup.options"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Components Information (JSON)</label>
+            <textarea type="text" class="form-control" rows="20" ng-model="componentGroup.components"></textarea>
+        </div>
+        <div class="form-group">
+            <button ng-click="addJar()">Upload Jar</button>
+            <div ng-repeat="file in fileUploads">
+                <span ng-show="file._id.isUploaded()">Uploaded Successfully!</span>
+                <span ng-show="file._id.uploadProgress() && !file._id.isUploaded()">Uploading... {{file._id.uploadProgress()}}%</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <button ng-click="addComponentGroup()">Add Component Group</button>
+        </div>
+    </form>
+</div>
